@@ -1,0 +1,207 @@
+/*Change in default elements*/
+
+body {
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+h5 {
+    font-size: 24px;
+    color: #8a6d3b;
+    text-align: center;
+}
+
+#month1 td {
+    padding: 1px !important;
+}
+
+th {
+    width: 58px;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    background: #e40dda;
+}
+
+li {
+    height: 80px;
+    font-size: 20px;
+}
+
+/*Application Classes*/
+
+.numberCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+    /* remove if you don't care about IE8 */
+    width: 55px;
+    height: 55px;
+    padding: 11px;
+    background: transparent;
+    color: #1f1e1e;
+    text-align: center;
+    font: 28px Arial, sans-serif;
+    display: inline-block;
+}
+
+#dno {
+    text-align: center;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.unCircle {
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+    /* remove if you don't care about IE8 */
+    width: 55px;
+    height: 55px;
+    padding: 11px;
+    background: transparent;
+    text-align: center;
+    font: 28px Arial, sans-serif;
+    display: inline-block;
+    cursor: default !important;
+    color: #aaa !important;
+}
+
+.numberCircle:hover {
+    border: 1px solid #e40dda;
+    background: #e40dda;
+}
+
+.modal-footer {
+    justify-content: center;
+}
+
+.button7 {
+    background-color: #c2b697 !important;
+    color: #fff !important;
+    padding: 10px 10px !important;
+    width: 250px !important;
+    float: right !important;
+}
+
+.button7:hover {
+    background: #f1eee5 !important;
+    color: #c2b697 !important;
+    border: 1px solid #c2b697 !important;
+}
+
+.button8 {
+    background-color: #c2b697;
+    font-style: oblique;
+    font-size: 20px;
+    color: #000;
+    padding: 10px 10px;
+    margin: 2px 2px;
+    width: 250px;
+    border: 2px solid #00000f;
+    border-radius: 8px;
+    float: center;
+}
+
+.dropdown {
+    margin: 50px;
+    width: 150px;
+    padding: 5px 35px 5px 5px;
+    color: #000;
+    font-size: 16px;
+    border: 1px solid #c2b697;
+    height: 34px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: 96% / 15% no-repeat #eee;
+}
+
+.spin {
+    font-size: 35px;
+    color: #8a6d3b !important;
+}
+
+.list-group-item {
+    background: transparent;
+    align-items: center;
+    align-content: center;
+    display: flex !important;
+    justify-content: space-between;
+    padding: 0px 20px !important;
+}
+
+#appoint-list {
+    width: 100%;
+}
+
+.cal-head {
+    background: #fff;
+    height: 50px;
+    align-content: center;
+}
+
+.month-head {
+    background: #47414f !important;
+    color: #fff !important;
+    padding: 20px 0px;
+}
+
+.month-head h2 {
+    color: #fff !important;
+}
+
+.monthYear {
+    color: #fff !important;
+}
+
+.spin-div {
+    text-align: center;
+    font-size: 60px;
+}
+
+.fa {
+    color: #fff;
+}
+
+.tbutton {
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
+
+.unbtn {
+    cursor: default !important;
+    background: #eee !important;
+    border-color: #ddd !important;
+    color: #aaa !important;
+}
+
+.form-control {
+    width: 100% !important;
+}
+
+.modal-header {
+    display: contents;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem 1rem;
+}
+
+.modal-title {
+    padding-top: 20px;
+    width:100% !important;
+}
+
+#appoint-list h3 {
+    color: #000;
+}
+
+#titl {
+    text-align: center;
+}
+
+label{margin-left: 20px;}
+#datepicker{width:180px; margin: 0 20px 20px 20px;}
+#datepicker > span:hover{cursor: pointer;}
