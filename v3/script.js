@@ -1,7 +1,8 @@
 $(function () {
     $("#datepicker").datepicker({
         autoclose: true,
-        todayHighlight: true
+        todayHighlight: true,
+        dateFormat: 'dd/mm/yyyy'
     }).datepicker('update', new Date());
 });
 const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -161,23 +162,30 @@ function clearCal() {
     $("#month3").innerHTML = "";
 }
 
-
-
-
 function generate() {
     clearCal();
     let selectedDate = $("#datepicker").val();
+    generateCal(selectedDate);
+}
+
+
+function generateCal(selectedDate) {
+   
     let selectedDateMonth = parseInt(selectedDate.split("/")[0]);
-    let pdays_ip = $("#pdays").val();
-    let pdays = $("#pdays").val();
-    let plength = $("#plength").val();
-    let postp = 2;
-    let prep = 2;
-    let = 5;
-    console.log(plength);
-    let normalday = plength - pdays - postp - prep;
+    let selectedDateDay = parseInt(selectedDate.split("/")[1]);
+
+    let pdays_ip = $("#pdays").val(); // HOW MANY DAYS DID IT LAST? Backup
+    let pdays = $("#pdays").val(); //  HOW MANY DAYS DID IT LAST?
+    let plength = $("#plength").val(); // HOW LONG IS YOUR MENSTRUAL?
+    let postp = 2; // Post period 2 days
+    let postToPeak = 3; // Post period to peak ovul
+    let peakOvul = 5; // Peak Ovulation 5 days
+    let prep = 2; // Pre peroid 2 days
+
+    let normalday = plength - pdays - postp - postToPeak - peakOvul - prep;
     console.log(normalday);
     console.log(selectedDate, pdays, plength, );
+    console.log(selectedDateDay)
 
     let monthOne = getDaysInMonth(parseInt(selectedDateMonth), 2019);
     let monthTwo = getDaysInMonth(parseInt(selectedDateMonth) + 1, 2019);
@@ -188,40 +196,51 @@ function generate() {
     monthTwoDays = range(1, monthTwo);
     monthThreeDays = range(1, monthThree);
 
-
-    console.log(selectedDateMonth)
-    console.log(selectedDateMonth - 1, monthNames[selectedDateMonth - 1])
-    console.log(selectedDateMonth, monthNames[selectedDateMonth])
-    console.log(selectedDateMonth + 1, monthNames[selectedDateMonth + 1])
-
-
     document.getElementById("monthOneName").innerHTML = monthNames[selectedDateMonth - 1] + " " + currentYear;
     document.getElementById("monthTwoName").innerHTML = monthNames[selectedDateMonth] + " " + currentYear;
     document.getElementById("monthThreeName").innerHTML = monthNames[selectedDateMonth + 1] + " " + currentYear;
     let monthOneDaysObj = [];
     let allDays = monthOneDays.concat(monthTwoDays).concat(monthThreeDays);
+
     console.log(allDays);
 
-    allDays.forEach(d => {
+    for (var i = 0; i < allDays.length; i++) {
+        let d = allDays[i];
         if (pdays === 0 && postp === 0 && normalday === 0 && prep === 0) {
             pdays = pdays_ip;
             prep = 2;
+            postToPeak = 3;
+            peakOvul = 5;
             postp = 2;
-            normalday = plength - pdays - postp - prep;
+            normalday = plength - pdays - postp - postToPeak - peakOvul - prep;
         }
-        if (pdays === 0 && postp === 0 && normalday === 0 && prep > 0) {
+        if (pdays === 0 && postp === 0 && postToPeak == 0 && peakOvul == 0 && normalday === 0 && prep > 0) {
             monthOneDaysObj.push({
                 date: d,
                 class: "red"
             })
             prep--;
         }
-        if (pdays === 0 && postp === 0 && normalday > 0) {
+        if (pdays === 0 && postp === 0 && postToPeak == 0 && peakOvul == 0 && normalday > 0) {
             monthOneDaysObj.push({
                 date: d,
                 class: "normal"
             })
             normalday--;
+        }
+        if (pdays === 0 && postp === 0 && postToPeak == 0 && peakOvul > 0) {
+            monthOneDaysObj.push({
+                date: d,
+                class: "cyan"
+            })
+            peakOvul--;
+        }
+        if (pdays === 0 && postp === 0 && postToPeak > 0) {
+            monthOneDaysObj.push({
+                date: d,
+                class: "normal"
+            })
+            postToPeak--;
         }
         if (pdays === 0 && postp > 0) {
             monthOneDaysObj.push({
@@ -230,16 +249,63 @@ function generate() {
             })
             postp--;
         }
-        if (pdays > 0) {
+        if (pdays > 0 && i > selectedDateDay - 2) {
             monthOneDaysObj.push({
                 date: d,
-                class: "pink "
+                class: "pink"
             })
             pdays--;
         }
-    })
+        if (i <= selectedDateDay - 2) {
+            monthOneDaysObj.push({
+                date: d,
+                class: "normal"
+            })
+        }
+    }
 
-    monthOneDays = monthOneDaysObj.slice(0, monthOne);
+    console.log(selectedDateDay)
+    pdays = pdays_ip;
+    prep = 2;
+    postToPeak = 3;
+    peakOvul = 5;
+    postp = 2;
+    normalday = plength - pdays - postp - postToPeak - peakOvul - prep;
+
+
+
+    let monthOneDaysPrev = monthOneDaysObj.slice(0, monthOne)
+    console.log(monthOneDaysPrev)
+
+    for (var i = selectedDateDay - 2; i >= 0; i--) {
+        console.log(i, prep, normalday, peakOvul)
+        if (prep > 0) {
+            monthOneDaysPrev[i].class = 'red';
+            prep--;
+            console.log("prep")
+        } else if (prep === 0 && normalday > 0) {
+            monthOneDaysPrev[i].class = 'normal';
+            normalday--;
+            console.log("normal")
+
+        } else if (prep === 0 && normalday === 0 && peakOvul > 0) {
+            monthOneDaysPrev[i].class = 'cyan';
+            peakOvul--;
+            console.log("cyan")
+        }  else if (prep === 0 && normalday === 0 && peakOvul === 0 && postToPeak > 0) {
+            monthOneDaysPrev[i].class = 'normal';
+            postToPeak--;
+            console.log("postToPeak")
+        }  else if (prep === 0 && normalday === 0 && peakOvul === 0 && postToPeak === 0 && postp > 0) {
+            monthOneDaysPrev[i].class = 'violet';
+            postp--;
+            console.log("postp")
+        }
+
+    }
+
+    monthOneDays = [...monthOneDaysPrev];
+
     monthTwoDays = monthOneDaysObj.slice(monthOne, monthOne + monthTwo);
     monthThreeDays = monthOneDaysObj.slice(monthOne + monthTwo, monthOne + monthTwo + monthThree);
     myFunction();

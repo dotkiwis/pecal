@@ -1,232 +1,255 @@
     /*Change in default elements*/
-    
-body {
-    background-repeat: no-repeat;
-    background-size: 100%;
-}
 
-.table-bordered {
-    text-align: center;
-    background: #FFF1FE;
- 
-}
+    body {
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
 
-h5 {
-    font-family:  Helvetica Rounded LT;
-    font-size: 18px;
-    color: #f055f0;
-    text-align: left;
-}   
-.roundedge{
-    border: 2px solid rgb(248, 69, 179);
-}
-.btn {
-    background-color: #ddd;
-    border: none;
-    color: black;
-    padding: 3px 32px;
-    text-align: center;
-    font-size: 16px;
-    margin: 50px 2px;
-    transition: 0.3s;
+    .table-bordered {
+        text-align: center;
+        background: #FFF1FE;
 
-  }
-  
-  .btn:hover {
-    background-color: #e43788;
-    color: white;
-  }
+    }
 
-.red {
-    color: white;
-    background-color: red;
+    h5 {
+        font-family: Helvetica Rounded LT;
+        font-size: 18px;
+        color: #f055f0;
+        text-align: left;
+    }
 
-}
+    .roundedge {
+        border: 2px solid rgb(248, 69, 179);
+    }
 
-.violet {
-    color: white;
-    background-color: violet;
-    
-}
+    .btn {
+        background-color: #ddd;
+        border: none;
+        color: black;
+        padding: 3px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 50px 2px;
+        transition: 0.3s;
 
-.pink {
-    color: white;
-    background-color: blue;
-}
+    }
 
-#month1 td {
-    padding: 3px !important;
-    width: 250px;
-height: 150;}
-#month2 td {
-    padding: 3px !important;
-    width: 250px;
-height: 150;
-}
-#month3 td {
-    padding: 3px !important;
-    width: 250px;
-height: 150;}
+    .btn:hover {
+        background-color: #e43788;
+        color: white;
+    }
 
-th {
-    width: 65px;
-    text-align: center;
-    color: #fff;
-    font-size: 25px;
-    background: #ec1a9c;
-}
+    .red {
+        color: white;
+        background-color:#F36;
 
-li {
-    height: 80px;
-    font-size: 20px;
-}
+    }
 
-/*Application Classes*/
+    .violet {
+        color: white;
+        background-color: #7e70ff;
 
-.numberCircle {
-    border-radius: 50%;
-    behavior: url(PIE.htc);
-    /* remove if you don't care about IE8 */
-    width: 55px;
-    height: 55px;
-    padding: 5px;
-    background: transparent;
-    color: #1f1e1e;
-    text-align: center;
-    font: 28px Arial, sans-serif;
-    display: inline-block;
-}
+    }
 
-#dno {
-    text-align: center;
-    width: 100%;
-    padding: 10px 0px;
-}
+    .pink {
+        color: white;
+        background-color:#ee10f6;
+    }
 
-.unCircle {
-    border-radius: 50%;
-    behavior: url(PIE.htc);
-    /* remove if you don't care about IE8 */
-    width: 55px;
-    height: 55px;
-    padding: 5px;
-    background: transparent;
-    text-align: center;
-    font: 28px Arial, sans-serif;
-    display: inline-block;
-    cursor: default !important;
-    color: #aaa !important;
-}
+    .cyan {
+        color: white;
+        background-color:#00aeef;
+    }
 
-.numberCircle:hover {
-    border: 1px solid #e40dda;
-    background: #e40dda;
-}
+    #month1 td {
+        padding: 3px !important;
+        width: 250px;
+        height: 150;
+    }
 
-.spin {
-    font-size: 35px;
-    color: #8a6d3b !important;
-}
+    #month2 td {
+        padding: 3px !important;
+        width: 250px;
+        height: 150;
+    }
 
+    #month3 td {
+        padding: 3px !important;
+        width: 250px;
+        height: 150;
+    }
 
-.cal-head {
-    background: #fff;
-    height: 30px;
-    align-content: center;
-}
+    th {
+        width: 65px;
+        text-align: center;
+        color: #fff;
+        font-size: 25px;
+        background: #ec1a9c;
+    }
 
-.month-head {
-    background: #e4229a !important;
-    color: #fff !important;
-    padding: 5px 0px;
-}
+    li {
+        height: 80px;
+        font-size: 20px;
+    }
 
-.month-head h4 {
-    color: #fff !important;
-    
-}
+    /*Application Classes*/
 
-.monthYear {
-    color: #fff !important;
-}
+    .numberCircle {
+        border-radius: 50%;
+        behavior: url(PIE.htc);
+        /* remove if you don't care about IE8 */
+        width: 55px;
+        height: 55px;
+        padding: 5px;
+        background: transparent;
+        color: #1f1e1e;
+        text-align: center;
+        font: 28px Arial, sans-serif;
+        display: inline-block;
+    }
 
-.spin-div {
-    text-align: center;
-    font-size: 60px;
-}
+    #dno {
+        text-align: center;
+        width: 100%;
+        padding: 10px 0px;
+    }
 
-.modal-title {
-    padding-top: 20px;
-    width:100% !important;
-}
+    .unCircle {
+        border-radius: 50%;
+        behavior: url(PIE.htc);
+        /* remove if you don't care about IE8 */
+        width: 55px;
+        height: 55px;
+        padding: 5px;
+        background: transparent;
+        text-align: center;
+        font: 28px Arial, sans-serif;
+        display: inline-block;
+        cursor: default !important;
+        color: #aaa !important;
+    }
+
+    .numberCircle:hover {
+        border: 1px solid #e40dda;
+        background: #e40dda;
+    }
+
+    .spin {
+        font-size: 35px;
+        color: #8a6d3b !important;
+    }
 
 
+    .cal-head {
+        background: #fff;
+        height: 30px;
+        align-content: center;
+    }
 
-#titl {
-    text-align: center;
-}
+    .month-head {
+        background: #e4229a !important;
+        color: #fff !important;
+        padding: 5px 0px;
+    }
 
-label{margin-left: 20px;}
-#datepicker{width:200px; margin: 0 20px 0px 0px;}
-#datepicker > span:hover{cursor: pointer;}
+    .month-head h4 {
+        color: #fff !important;
+
+    }
+
+    .monthYear {
+        color: #fff !important;
+    }
+
+    .spin-div {
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .modal-title {
+        padding-top: 20px;
+        width: 100% !important;
+    }
 
 
-.rectangle {
-    height: 30px;
-    width: 70px;
-    margin-left: 20px;
 
-    background-color: rgb(22, 50, 175);
-  }
+    #titl {
+        text-align: center;
+    }
 
-  .rectangle1{
-    height: 30px;
-    width: 70px;
-    margin-left: 20px;
+    label {
+        margin-left: 20px;
+    }
 
-    background-color: red;
-  }
+    #datepicker {
+        width: 200px;
+        margin: 0 20px 0px 0px;
+    }
 
-  .rectangle2 {
-    height: 30px;
-    width: 70px;
-    margin-left: 20px;
+    #datepicker>span:hover {
+        cursor: pointer;
+    }
 
-    background-color: violet;
-  }
 
-  .mdec{
-    height: 30px;
-    width: 30px;
-    
-      background-color: rgb(248, 69, 179);
-      
-  }
-  .minc{
-    height: 30px;
-    width: 30px;
-    
-    background-color: rgb(248, 69, 179); 
-}
-.ddec{
-    height: 30px;
-    width: 30px;
-      background-color: rgb(248, 69, 179);
-      
-  }
-  .dinc{
-    height: 30px;
-    width: 30px;
-   
-    background-color: rgb(248, 69, 179);
-    
-}
+    .rectangle {
+        height: 30px;
+        width: 70px;
+        margin-left: 20px;
 
-h4{
-    background: #fae3fa;
-    border-radius: 5px;
-    font-family: Arial;
-    font-size: 12;
-    text-align: center;
+        background-color: rgb(22, 50, 175);
+    }
 
-}
+    .rectangle1 {
+        height: 30px;
+        width: 70px;
+        margin-left: 20px;
+
+        background-color: red;
+    }
+
+    .rectangle2 {
+        height: 30px;
+        width: 70px;
+        margin-left: 20px;
+
+        background-color: violet;
+    }
+
+    .mdec {
+        height: 30px;
+        width: 30px;
+
+        background-color: rgb(248, 69, 179);
+
+    }
+
+    .minc {
+        height: 30px;
+        width: 30px;
+
+        background-color: rgb(248, 69, 179);
+    }
+
+    .ddec {
+        height: 30px;
+        width: 30px;
+        background-color: rgb(248, 69, 179);
+
+    }
+
+    .dinc {
+        height: 30px;
+        width: 30px;
+
+        background-color: rgb(248, 69, 179);
+
+    }
+
+    h4 {
+        background: #fae3fa;
+        border-radius: 5px;
+        font-family: Arial;
+        font-size: 12;
+        text-align: center;
+
+    }
