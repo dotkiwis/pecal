@@ -312,32 +312,34 @@ function generateCal(selectedDate) {
     }
 
     monthOneDays = [...monthOneDaysPrev];
-
     monthTwoDays = monthOneDaysObj.slice(monthOne, monthOne + monthTwo);
     monthThreeDays = monthOneDaysObj.slice(monthOne + monthTwo, monthOne + monthTwo + monthThree);
     myFunction();
 }
-let m = 0;
 
 function minc() {
-    m++;
-    document.getElementById('plength').value = m;
+    var m = document.getElementById('plength');
+    m.value++;
 }
+
 
 function mdec() {
-    m--;
-    document.getElementById('plength').value = m;
+    m=document.getElementById('plength');
+    m.value--;
 }
-let d = 0;
+
+
 
 function dinc() {
-    d++;
-    document.getElementById('pdays').value = d;
+ 
+    var d=document.getElementById('pdays');
+    d.value++
 }
 
+
 function ddec() {
-    d--;
-    document.getElementById('pdays').value = d;
+    d=document.getElementById('pdays');
+    d.value--;
 }
 
 $(document).ready(function(){

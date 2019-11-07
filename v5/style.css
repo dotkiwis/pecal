@@ -1,5 +1,5 @@
     /*Change in default elements*/
-
+    
     .container body {
         background-repeat: no-repeat;
         background-size: 100%;
@@ -8,7 +8,6 @@
     .container .table-bordered {
         text-align: center;
         background: #FFF1FE;
-
     }
 
     .container h5 {
@@ -31,7 +30,6 @@
         font-size: 16px;
         margin: 50px 2px;
         transition: 0.3s;
-
     }
 
     .container .btn:hover {
@@ -42,13 +40,11 @@
     .container .red {
         color: white;
         background-color:#F36;
-
     }
 
     .container .violet {
         color: white;
         background-color: #7e70ff;
-
     }
 
     .container .pink {
@@ -171,8 +167,6 @@
         width: 100% !important;
     }
 
-
-
     .container #titl {
         text-align: center;
     }
@@ -189,7 +183,6 @@
     .container #datepicker>span:hover {
         cursor: pointer;
     }
-
 
     .rectangle {
         height: 30px;
@@ -211,22 +204,18 @@
         height: 30px;
         width: 70px;
         margin-left: 20px;
-
         background-color: violet;
     }
 
     .container .mdec {
         height: 30px;
         width: 30px;
-
         background-color: rgb(248, 69, 179);
-
     }
 
     .container .minc {
         height: 30px;
         width: 30px;
-
         background-color: rgb(248, 69, 179);
     }
 
@@ -234,15 +223,12 @@
         height: 30px;
         width: 30px;
         background-color: rgb(248, 69, 179);
-
     }
 
     .container .dinc {
         height: 30px;
         width: 30px;
-
         background-color: rgb(248, 69, 179);
-
     }
 
     .container h4{
@@ -251,5 +237,4 @@
         font-family: Arial;
         font-size: 12;
         text-align: center;
-
     }

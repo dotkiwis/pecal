@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    
     <title>Bootstrap Example</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,17 +24,20 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.css"
         rel="stylesheet" type="text/css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.js"></script>
+
+
+
+
+
 </head>
 
 <body>
     <div class="container">
-
         <div class="row">
             <div class="col-sm-3">
                 <h5>WHEN DID YOUR LAST PERIOD START?</h5>
                 <input class="roundedge" id="datepicker" width="206" style="text-align:center; color: palevioletred" />
             </div>
-
             <div class="col-sm-3">
                 <h5>HOW MANY DAYS DID IT LAST?</h5>
             <button class="ddec" onclick="ddec()">-</button>
@@ -42,47 +46,30 @@
                     style="text-align:center; color: palevioletred" />       
                 <button class="dinc" onClick="dinc()">+</button>
             </div>
-
-
             <div class="col-sm-3">
                 <h5>HOW LONG IS YOUR MENSTRUAL?</h5>
                 <button class="mdec" onclick="mdec()">-</button>
-                <input class="roundedge" id="plength" width="276" value=28
-                    style="text-align:center; color: palevioletred" />
+                <input class="roundedge" id="plength" width="276" value="28" style="text-align:center; color: palevioletred" />
                 <button class="minc" onClick="minc()">+</button>
             </div>
-
-            
-           
-
-
-
             <div class="col-sm-3">
                 <button class="btn" onclick="generate()">Click</button>
-
             </div>
-
             <div class="col-sm-3">
                 <button class="btn" onclick="generateCal('05/23/2019')">Any date</button>
-
             </div>
         </div>
-
-
         </br><br />
         <div class="row">
             <div class="col-md-1">
                 <a href="#" id="page-left" onclick="prevMonth()"><i class="fa fa-arrow-left"></i></a>
             </div>
-
             <div class="col-md-10">
             </div>
-
             <div class="col-md-1">
                 <a href="#" id="page-right" onclick="nextMonth()"><i class="fa fa-arrow-right"></i></a>
             </div>
         </div>
-
         <div class="row">
             <div class="col-sm">
                 <h4 id="monthOneName"></h4>
@@ -101,8 +88,8 @@
             </div>
         </div>
     </div>
-    <script src="script.js" language="javascript">
-    </script>
+
+    <script src="script.js" language="javascript"></script>
     <br />
     <br />
     <div class="row">
@@ -116,5 +103,4 @@
         <div class="col-sm-3"></div>
     </div>
 </body>
-
 </html>
