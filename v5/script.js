@@ -100,8 +100,6 @@ function myFunction() {
                 let cell1 = row.insertCell(j);
                 cell1.className = monthOneDays[i + j + b1].class;
                 let x = document.createElement("span");
-
-                x.className = monthOneDays[i + j + b1].class;
                 x.innerHTML = monthOneDays[i + j + b1].date;
                 cell1.append(x);
             }
@@ -115,7 +113,6 @@ function myFunction() {
                 let cell1 = row.insertCell(j);
                 cell1.className = monthTwoDays[i + j + b2].class;
                 let x = document.createElement("span");
-                x.className = monthTwoDays[i + j + b2].class;
                 x.innerHTML = monthTwoDays[i + j + b2].date;
                 cell1.append(x);
             }
@@ -125,12 +122,10 @@ function myFunction() {
     for (i = 0; i < monthThreeDays.length / 7; i++) {
         let row = monthThreeTable.insertRow(i);
         for (j = 0; j < 7; j++) {
-            // //console.log("i", i, "j", j, "i+j", i + j, "b1", b1)
             if (monthThreeDays[i + j + b3] != undefined) {
                 let cell1 = row.insertCell(j);
                 cell1.className = monthThreeDays[i + j + b3].class;
                 let x = document.createElement("span");
-                x.className = monthThreeDays[i + j + b3].class;
                 x.innerHTML = monthThreeDays[i + j + b3].date;
                 cell1.append(x);
             }
