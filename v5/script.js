@@ -17,7 +17,6 @@ const weekNames = [
     "Fri",
     "Sat"
 ]
-
 let getDaysInMonth = function (month, year) {
     console.log(month, year)
     return new Date(year, month, 0).getDate();
@@ -312,67 +311,36 @@ function generateCal(selectedDate) {
     }
 
     monthOneDays = [...monthOneDaysPrev];
+
     monthTwoDays = monthOneDaysObj.slice(monthOne, monthOne + monthTwo);
     monthThreeDays = monthOneDaysObj.slice(monthOne + monthTwo, monthOne + monthTwo + monthThree);
     myFunction();
 }
 
+
 function minc() {
-    var m = document.getElementById('plength');
-    m.value++;
+  var m=  document.getElementById('plength');
+  m.value++;
 }
 
-
 function mdec() {
-    m=document.getElementById('plength');
+    m=  document.getElementById('plength');
     m.value--;
 }
 
-
+let d = 0;
 
 function dinc() {
- 
+    
     var d=document.getElementById('pdays');
-    d.value++
+    d.value++;
 }
-
 
 function ddec() {
-    d=document.getElementById('pdays');
-    d.value--;
+    
+   d= document.getElementById('pdays');
+   d.value--;
 }
-
-$(document).ready(function(){
-    //var counter = $('#TextBox').val();
-    $('#AddButton').click( function() {
-        var counter = $('#TextBox').val();
-        counter++;
-        $('#TextBox').val(counter);
-});
-
-$('#RemoveButton').click( function() {
-        var counter = $('#TextBox').val();
-        counter--;
-        $('#TextBox').val(counter);
-});
-});
-
-$(document).ready(function(){
-    //var counter = $('#TextBox').val();
-    $('#AButton').click( function() {
-        var counter = $('#TextBox1').val();
-        counter++;
-        $('#TextBox1').val(counter);
-});
-
-$('#RButton').click( function() {
-    var counter = $('#TextBox1').val();
-    counter--;
-    $('#TextBox1').val(counter);
-});
-});
-
-
 let values = [];
 let selectedDate;
 let selectedFullDate;
