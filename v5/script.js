@@ -19,40 +19,27 @@ const weekNames = [
 ]
 let getDaysInMonth = function (month, year) {
     console.log(month, year)
-    return new Date(year, month, 0).getDate();
+    return new Date(year, month + 1, 0).getDate();
 };
 
 function range(start, end) {
     return (new Array(end - start + 1)).fill(undefined).map((_, i) => i + start);
 }
 
+let nextPrev = 0;
+
 function nextMonth() {
-    if (currentMonth === 11) {
-        currentMonth = 0;
-        currentYear += 1;
-    } else {
-        currentMonth += 1;
-    }
-    myFunction();
+    clearCal();
+    nextPrev++;
+    let selectedDate = $("#datepicker").val();
+    generateCal(selectedDate, nextPrev);
 }
 
 function prevMonth() {
-    console.log("df")
     clearCal();
-    let d = new Date($("#datepicker").val());
-    var m = d.getMonth();
-    var pm = m - 3;
-    var pDays = 28;
-
-    while (d.getMonth() > pm || d.getDate() - pDays >= 1) {
-        d.setDate(d.getDate() - pDays);
-
-    }
-
-    console.log(d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear())
-    generateCal(d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear());
-
-    $("#datepicker").datepicker('update', new Date(d))
+    nextPrev--;
+    let selectedDate = $("#datepicker").val();
+    generateCal(selectedDate, nextPrev);
 
 }
 
@@ -166,14 +153,16 @@ function clearCal() {
 function generate() {
     clearCal();
     let selectedDate = $("#datepicker").val();
-    generateCal(selectedDate);
+    nextPrev = 0;
+    generateCal(selectedDate, nextPrev);
 }
 
 
-function generateCal(selectedDate) {
+function generateCal(selectedDate, prevNext) {
 
     let selectedDateMonth = parseInt(selectedDate.split("/")[0]);
     let selectedDateDay = parseInt(selectedDate.split("/")[1]);
+    let selectedDateYear = parseInt(selectedDate.split("/")[2]);
 
     let pdays_ip = $("#pdays").val(); // HOW MANY DAYS DID IT LAST? Backup
     let pdays = $("#pdays").val(); //  HOW MANY DAYS DID IT LAST?
@@ -188,18 +177,32 @@ function generateCal(selectedDate) {
     console.log(selectedDate, pdays, plength, );
     console.log(selectedDateDay)
 
-    let monthOne = getDaysInMonth(parseInt(selectedDateMonth), 2019);
-    let monthTwo = getDaysInMonth(parseInt(selectedDateMonth) + 1, 2019);
-    let monthThree = getDaysInMonth(parseInt(selectedDateMonth) + 2, 2019);
+    console.log(selectedDateYear, selectedDateMonth, selectedDateDay)
+
+    let monthOneDate = new Date(selectedDateYear, selectedDateMonth-1, 1);
+    monthOneDate.setMonth(monthOneDate.getMonth() + 0 + (prevNext * 3));
+    let monthTwoDate =  new Date(selectedDateYear, selectedDateMonth-1, 1);
+    monthTwoDate.setMonth(monthTwoDate.getMonth() + 1 + (prevNext * 3));
+    let monthThreeDate =  new Date(selectedDateYear, selectedDateMonth-1, 1);
+    monthThreeDate.setMonth(monthThreeDate.getMonth() + 2 + (prevNext * 3));
+
+
+    console.log("dates 1: " + monthOneDate);
+    console.log("dates 2: " +  monthTwoDate);
+    console.log("dates 3: " +  monthThreeDate);
+
+    let monthOne = getDaysInMonth(parseInt(monthOneDate.getMonth()), monthOneDate.getFullYear());
+    let monthTwo = getDaysInMonth(parseInt(monthTwoDate.getMonth()), monthTwoDate.getFullYear());
+    let monthThree = getDaysInMonth(parseInt(monthThreeDate.getMonth()), monthThreeDate.getFullYear());
     console.log("monthOne : " + monthOne, monthTwo, monthThree);
 
     monthOneDays = range(1, monthOne);
     monthTwoDays = range(1, monthTwo);
     monthThreeDays = range(1, monthThree);
 
-    document.getElementById("monthOneName").innerHTML = monthNames[selectedDateMonth - 1] + " " + currentYear;
-    document.getElementById("monthTwoName").innerHTML = monthNames[selectedDateMonth] + " " + currentYear;
-    document.getElementById("monthThreeName").innerHTML = monthNames[selectedDateMonth + 1] + " " + currentYear;
+    document.getElementById("monthOneName").innerHTML = monthNames[monthOneDate.getMonth()] + " " + monthOneDate.getFullYear();
+    document.getElementById("monthTwoName").innerHTML = monthNames[monthTwoDate.getMonth()] + " " + monthTwoDate.getFullYear();
+    document.getElementById("monthThreeName").innerHTML = monthNames[monthThreeDate.getMonth()] + " " + monthThreeDate.getFullYear();
     let monthOneDaysObj = [];
     let allDays = monthOneDays.concat(monthTwoDays).concat(monthThreeDays);
 
